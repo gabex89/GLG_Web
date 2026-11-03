@@ -1,0 +1,165 @@
+/* >> Mixins
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@mixin selectColor{
+  ::selection {
+    background: $color-selection; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: $color-selection; /* Gecko Browsers */
+  }
+}
+@mixin selectDisable{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  -o-user-select:none; 
+  user-select:none;
+}
+@mixin appearencNone{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  border-radius: 0;
+}
+@mixin allappearencNone{
+  appearance:none;
+   -moz-appearance:textfield;
+  -webkit-appearance:none;
+  border-radius: 0;
+}
+
+@mixin bgIcon($name){
+  background: url("../images/icon-#{$name}.svg") no-repeat left top; background-size: 18px;
+}
+@mixin filter($filter-type,$filter-amount) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+
+  // grayscale      ex: filter: grayscale(100%);
+  // sepia          ex: filter: sepia(100%);
+  // saturate       ex: filter: saturate(0%);
+  // hue-rotate     ex: filter: hue-rotate(45deg);
+  // invert         ex: filter: invert(100%);
+  // brightness     ex: filter: brightness(15%);
+  // contrast       ex: filter: contrast(200%);
+  // blur           ex: filter: blur(2px);
+}
+
+@mixin transform($transform-type,$transform-amount){
+  -webkit-transform: $transform-type+unquote('(#{$transform-amount})');
+  -moz-transform: $transform-type+unquote('(#{$transform-amount})');
+  -ms-transform: $transform-type+unquote('(#{$transform-amount})');
+  -o-transform: $transform-type+unquote('(#{$transform-amount})');
+  transform: $transform-type+unquote('(#{$transform-amount})');
+
+  // rotate         ex: transform: rotate(30deg);
+}
+@mixin transition($property: all,$timing: linear,$delay:0.4s) {
+  -webkit-transition: $property $timing $delay;
+  -moz-transition: $property $timing $delay;
+  -ms-transition: $property $timing $delay;
+  -o-transition: $property $timing $delay;
+  transition: $property $timing $delay;
+}
+@mixin rightGradient($location: 100%){
+  background: -webkit-linear-gradient(right, rgba(110,207,246,1) 0%, rgba(110,207,246,0) $location); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, rgba(110,207,246,1) 0%, rgba(110,207,246,0) $location); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, rgba(110,207,246,1) 0%, rgba(110,207,246,0) $location); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, rgba(110,207,246,1) 0%, rgba(110,207,246,0) $location); /* Standard syntax (must be last)*/
+}
+@mixin column($colNum: 2, $colGap: 2%){
+  -webkit-column-count: $colNum; /* Chrome, Safari, Opera */
+  -moz-column-count: $colNum; /* Firefox */
+  column-count: $colNum;
+  -webkit-column-gap: $colGap; /* Chrome, Safari, Opera */
+  -moz-column-gap: $colGap; /* Firefox */
+  column-gap: $colGap;
+}
+@mixin noTap{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* >> Animations Mixins
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+// duration     Specifies how many seconds or milliseconds an animation takes
+//                to complete one cycle. Default 0
+//
+// delay        Specifies when the animation will start. Default 0
+//
+// function     Describes how the animation will progress over one cycle of its
+//                duration. Default "ease"
+//
+// count        Specifies the number of times an animation is played. Default 1
+//
+// fill-mode    Specifies whether the effects of an animation are apparent
+//                before the animation starts and after it ends.
+//
+// visibility   Determines whether or not a transformed element is visible when
+//                it is not facing the screen.
+
+@mixin duration($duration: 1s) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin delay($delay: .2s) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -ms-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin function($function: ease) {
+  -webkit-animation-timing-function: $function;
+  -moz-animation-timing-function: $function;
+  -ms-animation-timing-function: $function;
+  -o-animation-timing-function: $function;
+  animation-timing-function: $function;
+}
+
+@mixin fill-mode($fill: both) {
+  -webkit-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -ms-animation-fill-mode: $fill;
+  -o-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
+@mixin visibility($visibility: hidden) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin transform-origin($transform-origin: center center) {
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+}
+
+@mixin transform-style($transform-style: flat) {
+  -webkit-transform-style: $transform-style;
+  -moz-transform-style: $transform-style;
+  -o-transform-style: $transform-style;
+  transform-style: $transform-style;
+}
+
+@mixin animation-name($animation-name) {
+  -webkit-animation-name: $animation-name;
+  -moz-animation-name: $animation-name;
+  -ms-animation-name: $animation-name;
+  -o-animation-name: $animation-name;
+  animation-name: $animation-name;
+}

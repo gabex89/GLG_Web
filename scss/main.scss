@@ -1,0 +1,34 @@
+/* >> Import Fonts
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "fonts";
+
+/* >> Import Variables
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "variables";
+
+/* >> Import functions
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "functions";
+
+/* >> Import Mixins
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "mixins";
+
+/* >> Import Groups
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "groups";
+
+/* >> Import Layouts
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "reset-2020";
+@import "layout/l-main";
+
+/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- *\
+Import BEM (Block - Element - Modifier)
+\* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/header-anim";
+@import "blocks/services";
+@import "blocks/planing";
+@import "blocks/footer";

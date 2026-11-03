@@ -1,0 +1,40 @@
+/* >> Header Style
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+header{
+  @extend %clearFix; /*overflow: hidden;*/
+  width: 100%; z-index: 1; font-family: $baseFont;
+  .headerWrapper{
+    width: 90%; max-width: 1920px; @extend %flexBox; z-index: 1; margin:0 auto;
+    .headerText{ @extend %flexBox; width:60%; z-index: 3; font-size: 22px; position: absolute; top: 20px; line-height: 1.4; align-items: center; 
+      b{color:$color-glg-blue;}
+      i{font-style: normal; color: $color-glg-yellow;}
+      @media #{$mq-iPad_port}{position: relative; width: 39%; margin-right: 2%; font-size: 50px;}
+      @media #{$mq-pc_1700}{font-size: 90px;}
+    }
+    .headerImg{width:100%; padding: 0; z-index: 2; animation: float 6s ease-in-out infinite;
+      @media #{$mq-iPad_port}{width:59%;}
+      img{width:100%; max-width: 50%; margin:0 0 0 auto;
+        @media #{$mq-tab_600}{ width:100%; max-width: 100%; margin:0 auto; }
+      }
+    }
+  }
+}
+
+.seoWrapper{display: block; max-width: 90%; width: 200px; margin: 10px auto; z-index: 1;
+  img{width:100%; }
+	h1,h2{display: none;}
+	@media #{$mq-iPad_land}{margin: 30px auto 0px auto;}
+}
+
+@keyframes float {
+	from {
+		transform: rotate(0deg)
+		           translate(5px)
+		           rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg)
+		           translate(5px) 
+		           rotate(-360deg);
+	}
+}
