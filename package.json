@@ -1,0 +1,23 @@
+{
+  "name": "glg-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "GLG Consulting Kft. static website",
+  "type": "module",
+  "scripts": {
+    "build": "sass scss/main.scss css/main.css --style=compressed --no-source-map",
+    "build:site": "npm run build && node scripts/build-site.mjs",
+    "watch": "sass scss/main.scss css/main.css --watch --embed-sources",
+    "serve": "http-server . -p 8080 -c-1",
+    "preview": "npm run build:site && http-server _site -p 8080 -c-1",
+    "dev": "npm run build && concurrently -k -n sass,http \"npm:watch\" \"npm:serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "http-server": "^14.1.1",
+    "sass": "^1.107.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

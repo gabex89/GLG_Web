@@ -1,0 +1,14 @@
+// Floating shapes spawned by js/modules/particles.js inside #one.
+.particle {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
+.pentahedron { fill: #05cceb40; }
+.point { fill: #64818940; }
+.rhombus { fill: #05c05740; stroke: #05c05740; }
+.x { fill: #c0d90040; }
+.circle { fill: #04729940; }

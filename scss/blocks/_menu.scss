@@ -1,50 +1,48 @@
-/* >> Menu Style
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+@use '../abstracts' as *;
+
 .anchorMenu {
-  opacity: 0.4;
-  @include transition;
-  background: transparentize(#f7f7f7, 0.25);
-  width: 25px;
+  position: fixed;
+  top: 10%;
+  right: 0;
   z-index: 100;
-  transition: all 0.25s ease-out;
+  width: 25px;
+  background: rgb(247 247 247 / 75%);
   border-radius: 15px 0 0 15px;
-  &:hover, 
-  &:active {
+  opacity: 0.4;
+  transition: all 0.5s ease-in;
+
+  &:hover,
+  &:active,
+  &:focus-within {
+    width: 72px;
     opacity: 1;
-    @include transition;
+  }
+
+  @include up(tab-600) {
     width: 72px;
   }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-indent: 0;
-    li {
-      width:100%;
-      display: inline-block;
-      height: 40px;
-      background-size: 20px;
-      background-position: center;
-      background-repeat: no-repeat;
-      &:first-child{background-image: url(../images/icon-services.svg);}
-      &:nth-child(2){background-image: url(../images/icon-plan.svg);}
-      &:nth-child(3){background-image: url(../images/icon-contact.svg);}
-      @media #{$mq-tab_600}{background-size: 40px; height: 75px;}
-      a{display: block; width:100%; height: 100%;}
+
+  li {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+
+    &:nth-child(1) { background-image: url('../images/icon-services.svg'); }
+    &:nth-child(2) { background-image: url('../images/icon-plan.svg'); }
+    &:nth-child(3) { background-image: url('../images/icon-contact.svg'); }
+
+    @include up(tab-600) {
+      height: 75px;
+      background-size: 40px;
     }
   }
-  &.anchorMenu--fixed {
-    position: fixed;
-    top: 10%;
-    right: 0;
-    transition: all 0.5s ease-in;
-  }
-  @media #{$mq-tab_600}{
-    @include transition;
-    width: 72px;
-    &:hover, 
-    &:active {
-      width: 72px;
-    }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

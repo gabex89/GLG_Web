@@ -1,0 +1,36 @@
+// Design tokens: colors, typography, breakpoints.
+
+// Colors
+$color-glg-yellow: #c0d900;
+$color-glg-green: #05c057;
+$color-glg-light-blue: #05cceb;
+$color-glg-blue: #047299;
+$color-glg-dark-blue: #172b42;
+$color-glg-black: #0e1824;
+$color-glg-grey: #648189;
+
+$color-base-text: $color-glg-dark-blue;
+$color-link: $color-glg-green;
+$color-white: #fff;
+$color-selection: rgb(192 217 0 / 75%);
+$color-shadow: rgb(14 24 36 / 30%);
+
+$gradient-dark: linear-gradient(0deg, $color-glg-black 0%, $color-glg-dark-blue 90%);
+
+// Typography
+$font-title: 'Advent Pro', sans-serif;
+$font-base: 'Roboto Condensed', sans-serif;
+
+// Breakpoints (mobile first, min-width)
+$breakpoints: (
+  tab: 520px,
+  tab-600: 600px,
+  tab-720: 720px,
+  ipad-port: 768px,
+  pc-960: 960px,
+  ipad-land: 1024px,
+  pc-1200: 1200px,
+  pc-1300: 1300px,
+  pc-1500: 1500px,
+  pc-1700: 1700px,
+);

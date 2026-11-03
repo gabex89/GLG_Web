@@ -1,236 +1,169 @@
-<!DOCTYPE html>
-<html lang="hu-HU">
+<!doctype html>
+<html lang="hu">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GLG Consulting Kft.</title>
-    <meta name="description" content="Description">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="all">
-    <meta name=”robots” content=”all” />
-    <meta name="googlebot" content="all">
-    <meta name="googlebot-news" content="all">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <!--JS import-->
-    <script src='./js/jquery-2.2.4.min.js'></script>
-    <script  src="./js/menu.js"></script>
-    <script  src="./js/autoHeight.js"></script>
-    <script  src="./js/antigravity.js"></script>
-    <!-- RealFavicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="194x194" href="./images/favicon/favicon-194x194.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#047198">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./images/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GLG Consulting Kft.</title>
+  <meta name="description" content="GLG Consulting Kft. – komplex szoftveres megoldások, tanácsadás, szoftvertesztelés és alkalmazásfelügyelet. Keep your goals, keep going with GLG!">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#ffffff">
 
-    <!-- Open Graph Protocol -->
-    <link rel="canonical" href="#">
-    <meta property='og:locale' content="hu_HU">
-    <meta property='og:type' content="article">
-    <meta property='og:title' content=" ">
-    <meta property='og:description' content=" ">
-    <meta property='og:url' content=" ">
-    <meta property='og:site_name' content=" ">
-    <meta property="og:image" content=":::(pageData:baseHref):::/images/og-image.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <!-- Dublin Core -->
-    <meta name="DC.title" content=" ">
-    <meta name="dcterms.relation" content="http://www.glgconsulting.com/">
-    <meta name="dcterms.format" content="text/html">
-    <meta name="DC.type" content="honlap">
-    <meta name="DC.description" content=" ">
-    <meta name="DC.language" content="hun">
-    <!-- Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GLG Consulting Kft.">
+  <meta property="og:title" content="GLG Consulting Kft.">
+  <meta property="og:description" content="Komplex szoftveres megoldások, tanácsadás, szoftvertesztelés és alkalmazásfelügyelet.">
+
+  <!-- Icons -->
+  <link rel="icon" href="./images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="./images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="./images/favicon/site.webmanifest">
+
+  <link rel="preload" href="./fonts/roboto-condensed-v19-latin-ext_latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="module" src="./js/main.js"></script>
 </head>
-<body class="home">
+<body>
+<a class="skip-link" href="#main">Ugrás a tartalomra</a>
 <div id="jumpHere" class="stickyWrapper">
-    <nav class="anchorMenu anchorMenu--fixed">
-        <ul>
-          <li><a href="#one" title="Szolgáltatásaink"></a></li>
-          <li><a href="#two" title="Rólunk"></a></li>
-          <li><a href="#three" title="Kapcsolat"></a></li>
-        </ul>
-    </nav>
-    <header>
-        <a href="#" class="seoWrapper">
-            <img src="./images/logo.svg" alt="GLG Consulting Kft.">
-            <h1>GLG Consulting Kft.</h1>
-            <h2>Keep your goals, keep going with GLG!</h2>
-            <h2>A minőségi munka elégedetté tesz!</h2>
-        </a>
-        <div class="headerWrapper">
-            <div class="headerText">
-                <h3>Keep your goals,</br><b>keep going</b> with <i>GLG!</i></h3> 
-            </div>
-            <div class="headerImg">
-                <img src="./images/header.svg" alt="GLG Consulting Kft.">
-            </div>
+  <nav class="anchorMenu" aria-label="Gyorsmenü">
+    <ul>
+      <li><a href="#one" title="Szolgáltatásaink" aria-label="Szolgáltatásaink"></a></li>
+      <li><a href="#two" title="Rólunk" aria-label="Rólunk"></a></li>
+      <li><a href="#three" title="Kapcsolat" aria-label="Kapcsolat"></a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <a href="#" class="seoWrapper">
+      <img src="./images/logo.svg" alt="GLG Consulting Kft." width="1414" height="420">
+    </a>
+    <h1 class="visually-hidden">GLG Consulting Kft. – A minőségi munka elégedetté tesz!</h1>
+    <div class="headerWrapper">
+      <div class="headerText">
+        <p>Keep your goals,<br><b>keep going</b> with <i>GLG!</i></p>
+      </div>
+      <div class="headerImg">
+        <img src="./images/header.svg" alt="" width="1226" height="886" fetchpriority="high">
+      </div>
+    </div>
+    <div class="bg-cubes" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="fixed-action-btn">
+    <button type="button" id="back-to-top" class="btn-floating is-hidden" aria-label="Vissza a lap tetejére" inert>
+      <img src="./images/chevron-up.svg" alt="" width="448" height="512">
+    </button>
+  </div>
+
+  <main id="main" class="pageWrapper">
+    <section id="one" aria-labelledby="services-title">
+      <div class="contentWrapper">
+        <div class="servicesWrapper servicesWrapper--intro">
+          <p class="small-title">Szolgáltatásaink</p>
+          <h2 class="pageTitle" id="services-title">Tervezz és fejlődj <b>a GLG-vel.</b></h2>
+          <p class="services-lead">Az ügyfeleink kívánalmait szem előtt tartva, az elénk tárt informatikai feladatokra megoldási javaslatokat készítünk, amelyeket igény szerint, a több mint 10 éves szoftverfejlesztési tapasztalatunknak köszönhetően, megvalósítunk.</p>
+          <a href="#three" class="more-btn">Kapcsolat</a>
         </div>
-        <ul class="bg-cubes">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </header>
-    <div class="fixed-action-btn">
-        <a id="back-to-top" class="btn-floating scale-transition scale-out">
-            <img src="./images/chevron-up.svg" alt="Vissza a lap tetejére">
-        </a>
-    </div>
-    <div class="pageWrapper">
-        <section id="one">
-            <div class="contentWrapper">
-                <div class="servicesWrapper">
-                    <div class="service-item-wrapper">
-                        <div class="service-item">
-                            <div class="service-item-img-wrapper">
-                                <img src="./images/icon-software.svg" alt="Komplex szoftveres megoldások" class="service-item-img">
-                            </div>
-                            <div class="service-item-title">Komplex szoftveres megoldások</div>
-                            <div class="service-item-lead">Az ügyfeleink igényeit és érdekeit szem előtt tartva, folyamatos kommunikációval formáljuk meg azt a kívánt terméket, ami mindenki számára legmegfelelőbb és leginnovatívabb megoldásokat tartalmazza. Boldog ügyfél, boldog csapat, szuper végeredmény!</div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-item-img-wrapper">
-                                <img src="./images/icon-consulting.svg" alt="Tanácsadás" class="service-item-img">
-                            </div>
-                            <div class="service-item-title">Tanácsadás</div>
-                            <div class="service-item-lead">Bármely vállalkozás összehasonlíthatatlanul hatékonyabb működésre tehet szert, ha más élvonalbeli cégekhez hasonlóan friss és modern megoldásokat alkalmaz. Mindezt önállóan követni releváns szakmai ismeretek nélkül nehézkes és akadozó lehet. Ennek megelőzése érdekében jött létre a tanácsadó csapatunk.</div>
-                        </div>
-                    </div>
-                    <div class="service-item-wrapper">
-                        <div class="service-item">
-                            <div class="service-item-img-wrapper">
-                                <img src="./images/icon-auto.svg" alt="Szoftver tesztelés" class="service-item-img">
-                            </div>
-                            <div class="service-item-title">Szoftver tesztelés</div>
-                            <div class="service-item-lead">Cégünkkel szoftver tesztelés terén is élen járunk! Kidolgozott folyamataink és infrastruktúránk révén gyorsan és hatékonyan tudunk E2E (End-To-End) automatizált megoldást nyújtani a meglévő vagy akár új rendszerekhez.</div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-item-img-wrapper">
-                                <img src="./images/icon-3d.svg" alt="Alkalmazásfelügyelet" class="service-item-img">
-                            </div>
-                            <div class="service-item-title">Alkalmazásfelügyelet</div>
-                            <div class="service-item-lead">Ügyfeleink részére saját üzemeltetésű alkalmazás figyelő rendszert biztosítunk. A szolgáltatás segít a fejlesztői csapatoknak valós időben felfedezni, rangsorolni és osztályozni az érintett szoftver esetleges hibáit.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="servicesWrapper">
-                    <h3 class="small-title">Szolgáltatásaink</h3>
-                    <h3 class="pageTitle">Tervezz és fejlődj <b>a GLG-vel.</b></h3>
-                    <div class="services-lead">Az ügyfeleink kívánalmait szem előtt tartva, az elénk tárt informatikai feladatokra megoldási javaslatokat készítünk, amelyeket igény szerint, a több mint 10 éves szoftverfejlesztési tapasztalatunknak köszönhetően, megvalósítunk.</div>
-                    <a href="#three" class="more-btn">Kapcsolat</a>
-                </div>
-            </div>  
-        </section>
-        <section id="two">
-            <div class="contentWrapper">
-                <div class="planingWrapper">
-                    <h3 class="small-title">Rólunk</h3>
-                    <h3 class="pageTitle">Álmodj és alkoss <b>velünk,</b></h3>
-                    <div class="planing-lead">
-                        a GLG Consulting Kft.-vel. Cégünk 2020.júliusában alakult , három alapító tag Lilla, Gábor és Gergő részvételével.
-                        <br>
-                        Mindhárman különböző területekről érkeztünk, mégis közös alapvető gondolatokkal rendelkezünk. A vállalkozás célja, hogy kamatoztassuk az elmúlt 10 évben megszerzett tapasztalatunkat és vállvetve gondozzuk a vállakozás mindennapjait.
-                        <br>
-                        Alapvetően szoftvertervezéssel, fejlesztéssel és teszteléssel foglalkozunk, ugyanakkor számos ötlettel rendelkezünk, amelyeket a jövőben szeretnénk megvalósítani és sikerre vinni. Alapértékeink közé tartozik az ügyfél-, a család- és a munkatársak jólétének, elégedettségének biztosítása. Ugyanakkor hisszük, hogy céljainkat állhatatos és kitartó munkavégzéssel tudjuk elérni.
-                        <br>
-                        Jelenleg asztali- és webalkalmazások fejlesztésével és karbantartásával töltjük mindennapjainkat. Munkatársaink és alvállalkozóink segítségével olyan feladatok elvégzésére is képesek vagyunk, amelyek nagyfokú szakmai tapasztalatot igényelnek. Az ipari drónok izgalmas világába is bekapcsolódtunk, ahol jelenleg a piaci szereplők szoftveres támogatását helyezzük a középpontba.  
-                    </div>
-                </div>
-                <div class="planingWrapper">
-                    <img src="./images/drone.svg" alt="Álmodj és alkoss velünk" class="planing-img">
-                </div>
-            </div>
-        </section>
-    </div>
-    <footer id="three">
-        <div class="contentWrapper">
-            <div class="logoWrapp">
-                <img src="./images/logo.svg" alt="GLG Consulting Kft" class="footer-logo">
-            </div>
-            <div class="imgAnimationWrapper">
-                <img src="./images/footer-pointer.svg" alt="GLG Consulting Kft" class="footer-pointer">
-            </div>
-            <div class="footerContentLeft">
-                <div class="subMenu">
-                    <a href="#one" title="Szolgáltatásaink">Szolgáltatásaink</a>
-                    <a href="#two" title="Rólunk">Rólunk</a>
-                    <a href="#jumpHere" title="Fel">Fel</a>
-                </div>
-                <div class="footerBottomSection">
-                    <span>Keressen minket bizalommal bármikor!</span>
-                    <a class="link-mail" href="" id="email-protect" title="GLG Consulting"></a>
-                </div>
-            </div>
-            <a href="impresszum.html" class="footer-s-link" title="Impresszum">Impresszum</a>
+
+        <div class="servicesWrapper">
+          <div class="service-item-wrapper">
+            <article class="service-item">
+              <div class="service-item-img-wrapper">
+                <img src="./images/icon-software.svg" alt="" class="service-item-img" width="512" height="512">
+              </div>
+              <h3 class="service-item-title">Komplex szoftveres megoldások</h3>
+              <p class="service-item-lead">Az ügyfeleink igényeit és érdekeit szem előtt tartva, folyamatos kommunikációval formáljuk meg azt a kívánt terméket, ami mindenki számára legmegfelelőbb és leginnovatívabb megoldásokat tartalmazza. Boldog ügyfél, boldog csapat, szuper végeredmény!</p>
+            </article>
+            <article class="service-item">
+              <div class="service-item-img-wrapper">
+                <img src="./images/icon-consulting.svg" alt="" class="service-item-img" width="512" height="512">
+              </div>
+              <h3 class="service-item-title">Tanácsadás</h3>
+              <p class="service-item-lead">Bármely vállalkozás összehasonlíthatatlanul hatékonyabb működésre tehet szert, ha más élvonalbeli cégekhez hasonlóan friss és modern megoldásokat alkalmaz. Mindezt önállóan követni releváns szakmai ismeretek nélkül nehézkes és akadozó lehet. Ennek megelőzése érdekében jött létre a tanácsadó csapatunk.</p>
+            </article>
+          </div>
+          <div class="service-item-wrapper">
+            <article class="service-item">
+              <div class="service-item-img-wrapper">
+                <img src="./images/icon-auto.svg" alt="" class="service-item-img" width="512" height="512">
+              </div>
+              <h3 class="service-item-title">Szoftver tesztelés</h3>
+              <p class="service-item-lead">Cégünkkel szoftver tesztelés terén is élen járunk! Kidolgozott folyamataink és infrastruktúránk révén gyorsan és hatékonyan tudunk E2E (End-To-End) automatizált megoldást nyújtani a meglévő vagy akár új rendszerekhez.</p>
+            </article>
+            <article class="service-item">
+              <div class="service-item-img-wrapper">
+                <img src="./images/icon-3d.svg" alt="" class="service-item-img" width="492" height="512">
+              </div>
+              <h3 class="service-item-title">Alkalmazásfelügyelet</h3>
+              <p class="service-item-lead">Ügyfeleink részére saját üzemeltetésű alkalmazás figyelő rendszert biztosítunk. A szolgáltatás segít a fejlesztői csapatoknak valós időben felfedezni, rangsorolni és osztályozni az érintett szoftver esetleges hibáit.</p>
+            </article>
+          </div>
         </div>
-    </footer>
-    <div class="madeBy">
-        <span>© GLG consulting | <i id="spanYear"></i> - Szoftveres megoldások, tanácsadás </span>
-    </div>
-    <div class="cookie-bar" style="display: block;">
-        <div class="cookie-bar-inner">
-            <img src="./images/cookies.svg" alt="cookie">
-            <div class="cookie-bar-text">
-                <p>Cookie</p>
-                <p>Ez a weboldal a felhasználói élmény javítása, valamint a zavartalan működés biztosítása érdekében sütiket (cookie-kat) használ. A sütik kikapcsolása a böngésző beállításaiban lehetséges.</p>
-            </div>
-            <a href="javascript: void(0);" class="cookie-btn">Rendben</a>
+      </div>
+    </section>
+
+    <section id="two" aria-labelledby="about-title">
+      <div class="contentWrapper">
+        <div class="planingWrapper">
+          <p class="small-title">Rólunk</p>
+          <h2 class="pageTitle" id="about-title">Álmodj és alkoss <b>velünk,</b></h2>
+          <div class="planing-lead">
+            <p>a GLG Consulting Kft.-vel. Cégünk 2020 júliusában alakult, három alapító tag Lilla, Gábor és Gergő részvételével.</p>
+            <p>Mindhárman különböző területekről érkeztünk, mégis közös alapvető gondolatokkal rendelkezünk. A vállalkozás célja, hogy kamatoztassuk az elmúlt 10 évben megszerzett tapasztalatunkat és vállvetve gondozzuk a vállalkozás mindennapjait.</p>
+            <p>Alapvetően szoftvertervezéssel, fejlesztéssel és teszteléssel foglalkozunk, ugyanakkor számos ötlettel rendelkezünk, amelyeket a jövőben szeretnénk megvalósítani és sikerre vinni. Alapértékeink közé tartozik az ügyfél-, a család- és a munkatársak jólétének, elégedettségének biztosítása. Ugyanakkor hisszük, hogy céljainkat állhatatos és kitartó munkavégzéssel tudjuk elérni.</p>
+            <p>Jelenleg asztali- és webalkalmazások fejlesztésével és karbantartásával töltjük mindennapjainkat. Munkatársaink és alvállalkozóink segítségével olyan feladatok elvégzésére is képesek vagyunk, amelyek nagyfokú szakmai tapasztalatot igényelnek. Az ipari drónok izgalmas világába is bekapcsolódtunk, ahol jelenleg a piaci szereplők szoftveres támogatását helyezzük a középpontba.</p>
+          </div>
         </div>
-        <script>
-            if(localStorage.getItem('showCookieBar') == null){
-                $('.cookie-bar').show(500);
-            }
-            $('.cookie-btn').on('click' , function(){
-                $('.cookie-bar').hide(500);
-                localStorage.setItem('showCookieBar', 'True');
-            });
-        </script>
+        <div class="planingWrapper">
+          <img src="./images/drone.svg" alt="" class="planing-img" width="159" height="108" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="three">
+    <div class="contentWrapper">
+      <div class="logoWrapp">
+        <img src="./images/logo.svg" alt="GLG Consulting Kft." class="footer-logo" loading="lazy">
+      </div>
+      <div class="imgAnimationWrapper" aria-hidden="true">
+        <img src="./images/footer-pointer.svg" alt="" class="footer-pointer" width="323" height="657" loading="lazy">
+      </div>
+      <div class="footerContentLeft">
+        <nav class="subMenu" aria-label="Lábléc menü">
+          <a href="#one">Szolgáltatásaink</a>
+          <a href="#two">Rólunk</a>
+          <a href="#jumpHere">Fel</a>
+        </nav>
+        <div class="footerBottomSection">
+          <p class="footer-cta">Keressen minket bizalommal bármikor!</p>
+          <a class="link-mail" href="" id="email-protect"></a>
+        </div>
+      </div>
+      <a href="impresszum.html" class="footer-s-link">Impresszum</a>
     </div>
+  </footer>
+
+  <div class="madeBy">
+    <p>© GLG consulting | <span id="spanYear"></span> - Szoftveres megoldások, tanácsadás</p>
+  </div>
+
+  <div class="cookie-bar" role="region" aria-label="Süti tájékoztató" hidden>
+    <div class="cookie-bar-inner">
+      <img src="./images/cookies.svg" alt="" width="512" height="512">
+      <div class="cookie-bar-text">
+        <p>Cookie</p>
+        <p>Ez a weboldal a felhasználói élmény javítása, valamint a zavartalan működés biztosítása érdekében sütiket (cookie-kat) használ. A sütik kikapcsolása a böngésző beállításaiban lehetséges.</p>
+      </div>
+      <button type="button" class="cookie-btn">Rendben</button>
+    </div>
+  </div>
 </div>
-<script>
-    document.getElementById('email-protect').innerHTML = atob('aW5mb0BnbGdjb25zdWx0aW5nLmh1');
-    document.getElementById('email-protect').href = 'mailto:' + atob('aW5mb0BnbGdjb25zdWx0aW5nLmh1');
-    $('#spanYear').html(new Date().getFullYear());
-</script>
-<script>
-    $(document).ready(function() {
-        if ($('#back-to-top').length) {
-            var scrollTrigger = 100, // px
-                backToTop = function() {
-                    var scrollTop = $(window).scrollTop();
-                    if (scrollTop > scrollTrigger) {
-                        $('#back-to-top').removeClass('scale-out');
-                    } else {
-                        $('#back-to-top').addClass('scale-out');
-                    }
-                };
-            backToTop();
-            $(window).on('scroll', function() {
-                backToTop();
-            });
-            $('#back-to-top').on('click', function(e) {
-                e.preventDefault();
-                $('html,body').animate({
-                    scrollTop: 0
-                }, 700);
-            });
-        }
-    });
-</script>
 </body>
 </html>

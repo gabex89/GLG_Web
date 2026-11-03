@@ -1,46 +1,133 @@
-/* >> Services Style
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-#one{ 
-  .contentWrapper{
-    @extend %flexBox; width:90%; padding: 40px 0; z-index: 1; flex-direction: column-reverse;
-    @media #{$mq-tab_600}{  padding: 80px 0; }
-    @media #{$mq-iPad_land}{flex-direction: row;}
+@use '../abstracts' as *;
+
+#one {
+  position: relative;
+
+  .contentWrapper {
+    @include flex-row;
+
+    z-index: 1;
+    flex-direction: column;
+    width: 90%;
+    padding: 40px 0;
+
+    @include up(tab-600) {
+      padding: 80px 0;
+    }
+
+    // The intro comes first in the source (reading order), but sits right of the cards.
+    @include up(ipad-land) {
+      flex-direction: row-reverse;
+    }
   }
 }
-.servicesWrapper{ @extend %flexBox;width: 100%;
-  @media #{$mq-iPad_land}{width: 49%;margin-right: 2%;}
-  &:last-child{margin-right: 0;align-items: center;align-self: center; margin-bottom: 30px;
-    @media #{$mq-iPad_land}{ margin-bottom: 0; }
+
+.servicesWrapper {
+  @include flex-row;
+
+  @include up(ipad-land) {
+    width: 49%;
+    margin-right: 2%;
   }
-  .service-item-wrapper{ width: 100%; margin: 2% auto;
-    @media #{$mq-tab}{width: 49%; margin: 0 2% 2% 0;
-      &:nth-child(2n){margin: 4% 0 2% 0;}
+
+  &--intro {
+    align-items: center;
+    align-self: center;
+    margin-bottom: 30px;
+
+    @include up(ipad-land) {
+      margin-right: 0;
+      margin-bottom: 0;
     }
   }
-  .service-item{ @include transition; border-radius: 5px; padding: 20px; margin-bottom: 4%; text-align: center; background: $color-white; cursor: pointer;
-    -webkit-box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
-    -moz-box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
-    box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
-    .service-item-img-wrapper{
-      @extend %flexBox; align-items: center; align-self: center; width: 80px; height: 80px; padding: 15px; border-radius: 50px; margin: 20px auto;
-      -webkit-box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
-      -moz-box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
-      box-shadow: 5px 5px 10px 0px rgba(14,24,36,0.3);
+}
+
+.service-item-wrapper {
+  width: 100%;
+  margin: 2% auto;
+
+  @include up(tab) {
+    width: 49%;
+    margin: 0 2% 2% 0;
+
+    &:nth-child(2n) {
+      margin: 4% 0 2%;
     }
-    .service-item-img{ width: 80%; margin: 0 auto;}
-    .service-item-title{ @extend %flexBox;width: 100%; align-items: center; justify-content: center; font-size: 26px; font-weight: bold; margin-bottom: 20px;}
-    .service-item-lead{ font-size: 14px; color: $color-glg-grey; }
-    &:hover{ @include transition; transform: scale(1.04); }
   }
-  .services-lead { font-size: 16px; line-height: 20px; color: $color-glg-grey; margin-bottom:20px; 
-    @media #{$mq-iPad_port}{ font-size: 24px; line-height: 34px; }
+}
+
+.service-item {
+  margin-bottom: 4%;
+  padding: 20px;
+  text-align: center;
+  background: $color-white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 0 $color-shadow;
+  transition: all 0.4s linear;
+
+  &:hover {
+    transform: scale(1.04);
   }
-  .more-btn{ @include transition; color: $color-glg-grey; padding: 10px 30px; border-radius: 100px 100px 100px 100px; box-shadow: 0 0 0 2px $color-glg-grey;
-    &:hover {
-      @include transition;
-      background: $color-glg-grey;
-      color: #ffffff;
-    }
-    @media #{$mq-tab_600}{padding: 15px 60px;}
+}
+
+.service-item-img-wrapper {
+  @include flex-row;
+
+  align-items: center;
+  align-self: center;
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px 0 $color-shadow;
+}
+
+.service-item-img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.service-item-title {
+  @include flex-row;
+
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-item-lead {
+  font-size: 14px;
+  color: $color-glg-grey;
+}
+
+.services-lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-glg-grey;
+
+  @include up(ipad-port) {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.more-btn {
+  @include pill-outline;
+
+  padding: 10px 30px;
+  color: $color-glg-grey;
+  transition: all 0.4s linear;
+
+  &:hover {
+    color: $color-white;
+    background: $color-glg-grey;
+  }
+
+  @include up(tab-600) {
+    padding: 15px 60px;
   }
 }

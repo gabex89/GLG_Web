@@ -1,34 +1,16 @@
-/* >> Import Fonts
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "fonts";
+// Entry point — compiled to css/main.css (see package.json scripts).
 
-/* >> Import Variables
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "variables";
+@use 'base/fonts';
+@use 'base/reset';
+@use 'base/utilities';
+@use 'layout/l-main';
 
-/* >> Import functions
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "functions";
-
-/* >> Import Mixins
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "mixins";
-
-/* >> Import Groups
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "groups";
-
-/* >> Import Layouts
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "reset-2020";
-@import "layout/l-main";
-
-/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- *\
-Import BEM (Block - Element - Modifier)
-\* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
-@import "blocks/header";
-@import "blocks/menu";
-@import "blocks/header-anim";
-@import "blocks/services";
-@import "blocks/planing";
-@import "blocks/footer";
+@use 'blocks/header';
+@use 'blocks/header-anim';
+@use 'blocks/menu';
+@use 'blocks/services';
+@use 'blocks/planing';
+@use 'blocks/footer';
+@use 'blocks/back-to-top';
+@use 'blocks/cookie-bar';
+@use 'blocks/particles';

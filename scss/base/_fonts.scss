@@ -1,0 +1,26 @@
+// Self-hosted web fonts (woff2 only — supported by every current browser).
+$-faces: (
+  ('Advent Pro', 'advent-pro-v11', normal, 100, '100'),
+  ('Advent Pro', 'advent-pro-v11', normal, 200, '200'),
+  ('Advent Pro', 'advent-pro-v11', normal, 300, '300'),
+  ('Advent Pro', 'advent-pro-v11', normal, 400, 'regular'),
+  ('Advent Pro', 'advent-pro-v11', normal, 500, '500'),
+  ('Advent Pro', 'advent-pro-v11', normal, 600, '600'),
+  ('Advent Pro', 'advent-pro-v11', normal, 700, '700'),
+  ('Roboto Condensed', 'roboto-condensed-v19', normal, 300, '300'),
+  ('Roboto Condensed', 'roboto-condensed-v19', normal, 400, 'regular'),
+  ('Roboto Condensed', 'roboto-condensed-v19', normal, 700, '700'),
+  ('Roboto Condensed', 'roboto-condensed-v19', italic, 300, '300italic'),
+  ('Roboto Condensed', 'roboto-condensed-v19', italic, 400, 'italic'),
+  ('Roboto Condensed', 'roboto-condensed-v19', italic, 700, '700italic'),
+);
+
+@each $family, $file, $style, $weight, $variant in $-faces {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('../fonts/#{$file}-latin-ext_latin-#{$variant}.woff2') format('woff2');
+  }
+}

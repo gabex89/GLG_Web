@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 10px 20px;
+  color: $color-white;
+  background: $color-glg-dark-blue;
+  border-radius: 25px;
+  translate: 0 -200%;
+
+  &:focus {
+    translate: none;
+  }
+}

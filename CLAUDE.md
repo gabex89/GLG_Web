@@ -4,38 +4,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Static marketing site for GLG Consulting Kft. (Hungarian-language content, `lang="hu-HU"`). Plain HTML + jQuery + SCSS — no package.json, no bundler, no tests, no linter. Two pages: `index.html` (single-page layout with anchored sections) and `impresszum.html` (legal imprint). Not a git repository.
+Static marketing site for GLG Consulting Kft. (Hungarian content, `lang="hu"`). Plain HTML + vanilla ES modules + SCSS (Dart Sass). No framework, no bundler, no tests. Two pages: `index.html` (single page with anchored sections) and `impresszum.html` (legal imprint). Hosted on GitHub Pages: `.github/workflows/deploy.yml` runs on push to `main`, builds the CSS and deploys `_site/`.
 
 ## Commands
 
-There is no build system in the repo. The only build step is compiling SCSS to CSS; `css/main.css` (+ `main.css.map`) is the compiled output and is what the HTML actually loads. No Sass compiler is installed globally; use Dart Sass via npx:
-
 ```sh
-# one-off compile
-npx sass scss/main.scss css/main.css
-# watch while editing
-npx sass --watch scss/main.scss:css/main.css
+npm ci
+npm run dev         # build CSS, then watch SCSS + serve on http://localhost:8080
+npm run build       # compressed css/main.css only
+npm run build:site  # build + copy public files into _site/ (what CI deploys)
+npm run preview     # build:site, then serve _site/ on :8080
 ```
 
-Never hand-edit `css/main.css` — edit the SCSS and recompile. `scss/_functions.scss` uses `/` for division, which Dart Sass flags as deprecated (warning only).
+`css/` and `_site/` are build output and gitignored; never hand-edit `css/main.css`. `scripts/build-site.mjs` has the allowlist of published files — add new top-level pages or asset folders there or they won't be deployed.
 
-To preview, open `index.html` directly or serve the folder, e.g. `npx serve .` or `python3 -m http.server`.
+All asset and link paths must stay relative (`./css/…`, `../images/…`, `index.html#two`): the site has to work both at a custom domain root and under a project sub-path (`<user>.github.io/<repo>/`). No leading-slash URLs.
+
+The JS is loaded as `<script type="module">`, so pages must be served over HTTP — opening `index.html` via `file://` breaks the scripts.
 
 ## Architecture
 
-**SCSS** (`scss/main.scss` is the single entry point; import order matters):
-fonts → variables → functions → mixins → groups (`%placeholder` selectors for `@extend`) → `reset-2020` → `layout/` → `blocks/`.
-- `_variables.scss` holds the brand palette (`$color-glg-*`), font families (`Advent Pro` for titles, `Roboto Condensed` for body), and mobile-first media-query strings (`$mq-tab`, `$mq-pc_960`, … used as `@media #{$mq-…}`).
-- `blocks/` uses BEM-style partials, one per page region (header, menu, header-anim, services, planing, footer). New page sections get a new partial here plus an `@import` in `main.scss`.
-- Mixins emit vendor-prefixed properties (transition, transform, animation helpers) — follow that pattern rather than adding raw properties.
-- Fonts are self-hosted in `fonts/` (no Google Fonts CDN).
+**SCSS** — `scss/main.scss` is the only entry and uses the Sass module system (`@use`/`@forward`, no `@import`). Each partial pulls what it needs with `@use '../abstracts' as *;`.
+- `abstracts/` — `_tokens.scss` (brand colors `$color-glg-*`, fonts, `$breakpoints` map) and `_mixins.scss` (`up($name)` min-width media query, `motion-ok` for prefers-reduced-motion, `flex-row`, `pill-outline`, `visually-hidden`). Abstracts emit no CSS.
+- `base/` — fonts (woff2 only, generated from a list), reset, utilities (`.visually-hidden`, `.skip-link`).
+- `layout/` — sticky-footer page shell, `.contentWrapper`, shared `.small-title` / `.pageTitle`.
+- `blocks/` — one partial per page region/component.
+- No vendor prefixes; target is evergreen browsers. Animations are gated behind `motion-ok`.
+- `flex-row` sets `width: 100%`; don't include it in rules that must keep a width from a less specific selector (e.g. `footer .contentWrapper`).
 
-**JS** (jQuery 2.2.4, loaded in `<head>` of both pages, no modules):
-- `menu.js` — smooth-scroll for in-page `#anchor` links.
-- `autoHeight.js` — equalizes heights of service titles/leads and `footer .autoHeight` above 472px width; selectors are hard-coded at the top of the file, so renaming those classes in HTML breaks it.
-- `antigravity.js` — floating SVG particle animation appended into `#one`.
-- Inline scripts at the bottom of the HTML pages handle: the cookie bar (`localStorage.showCookieBar`), the obfuscated contact email (base64 via `atob` into `#email-protect` — keep the address out of plain HTML), the footer year, and the back-to-top button.
+**JS** — `js/main.js` imports and initialises each module in `js/modules/`; every `init*` function no-ops when its elements are absent, so both pages share one entry.
+- `equal-heights.js` — equalises `.service-item-title` / `.service-item-lead` heights above 473px.
+- `particles.js` — floating SVG shapes appended into `#one`; skipped under reduced motion.
+- `cookie-bar.js` — localStorage key `showCookieBar` (kept for existing visitors); bar is `hidden` in HTML and revealed by JS.
+- `back-to-top.js`, `contact.js` (base64-obfuscated email injected into `#email-protect` — keep the address out of the index HTML; footer year).
+- Smooth scrolling is CSS `scroll-behavior`, not JS.
 
-**Page structure** (`index.html`): `#jumpHere` sticky wrapper → fixed `anchorMenu` → `header` → `section#one` (Szolgáltatásaink / services) → `section#two` (Rólunk / about) → `footer#three` (Kapcsolat / contact). The anchor IDs are referenced by the side menu, footer links, and `antigravity.js`. `impresszum.html` shares the same head, CSS, and JS includes, so changes to shared includes must be made in both files.
-
-Several SEO/Open Graph meta tags in the `<head>` are still placeholders (empty `og:*`, `DC.*`, `description="Description"`, a `:::(pageData:baseHref):::` template token).
+**Pages** — `index.html`: `#jumpHere` wrapper → side `.anchorMenu` → `header` → `main` with `section#one` (services) and `section#two` (about) → `footer#three` (contact). These IDs are referenced by the menus, footer links, and `particles.js`. In `#one` the intro (`.servicesWrapper--intro`) comes first in the DOM and is placed right of the cards with `row-reverse` on desktop. `impresszum.html` duplicates the head, footer and cookie bar (no templating), so shared markup changes must be made in both files; its footer links point to `index.html#…`.
